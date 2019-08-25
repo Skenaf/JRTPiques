@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>JRTTeam</title>
+    <script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="Chart.js"></script>
+    <script src="Chart.min.js"></script>
+    <script src="utils.js"></script>
+  </head>
+
+
+
+  <body>
+    <div>
+      <canvas id="canvas">
+        <script>
+          var config = {
+            type: "line",
+            data: {
+              labels: [
+                "Week 1",
+                "week 2",
+                "week 3",
+                "week 4",
+                "week 5",
+                "week 6",
+                "week 7",
+				"week 8",
+				"week 9", 
+				"week 10", 
+				"week 11"
+              ],
+              datasets: [
+                {
+                  label: "David R",
+				  fill: false,
+                  backgroundColor: window.chartColors.red,
+                  borderColor: window.chartColors.red,
+                  data: [
+                    "71",
+                    "183",
+                    "224",
+                    "334",
+                    "411",
+                    "432",
+                    "533",
+					"683",
+					"804",
+					"814",
+					"814"
+                  ],
+
+                },
+                {
+                  label: "Alan",
+                  fill: false,
+                  backgroundColor: window.chartColors.blue,
+                  borderColor: window.chartColors.blue,
+                  data: [
+					  "23",
+					  "23",
+					  "23",
+					  "23",
+					  "93",
+					  "199",
+					  "313",
+					  "403",
+					  "479",
+					  "562",
+					  "651"
+                  ]
+                },
+				{
+					label: "Javi",
+					fill: false,
+					backgroundColor: window.chartColors.green,
+					borderColor: window.chartColors.green,
+					data:[
+						"50",
+						"117",
+						"196",
+						"252",
+						"311",
+						"389",
+						"444",
+						"529",
+						"573",
+						"573",
+						"631"
+					]
+				},
+				{
+					label: "Jose",
+					fill: false,
+					backgroundColor: window.chartColors.yellow,
+					borderColor: window.chartColors.yellow,
+					data:[
+						"69",
+						"125",
+						"193",
+						"251",
+						"251",
+						"330",
+						"330",
+						"384",
+						"447",
+						"447",
+						"447"
+					]
+				},
+				{
+					label: "Santi",
+					fill: false,
+					backgroundColor: window.chartColors.purple,
+					borderColor: window.chartColors.purple,
+					data:[
+						"0",
+						"132",
+						"132",
+						"258",
+						"258",
+						"258",
+						"258",
+						"425",
+						"425",
+						"425",
+						"425"						
+					]
+				},
+				{
+					label: "Manu",
+					fill: false,
+					backgroundColor: window.chartColors.orange,
+					borderColor: window.chartColors.orange,
+					data:[
+						"0",
+						"0",
+						"37",
+						"37",
+						"37",
+						"95",
+						"151",
+						"203",
+						"203",
+						"203",
+						"203"
+					]
+				},
+				{
+					label: "Abel",
+					fill: false,
+					backgroundColor: window.chartColors.red,
+					borderColor: window.chartColors.red,
+					data:[
+						"0",
+						"0",
+						"0",
+						"0",
+						"0",
+						"27",
+						"130",
+						"130",
+						"199",
+						"199",
+						"199"
+					]
+				},
+				{
+					label: "David P",
+					fill: false,
+					backgroundColor: window.chartColors.blue,
+					borderColor: window.chartColors.blue,
+					data:[
+						"62",
+						"62",
+						"138",
+						"138",
+						"138",
+						"138",
+						"138",
+						"138",
+						"138",
+						"138",
+						"138"
+					]
+				}
+              ]
+            },
+            options: {
+              responsive: true,
+              title: {
+                display: true,
+                text: "JRT Porsche"
+              },
+              tooltips: {
+                mode: "index",
+                intersect: false
+              },
+              hover: {
+                mode: "nearest",
+                intersect: true
+              },
+              scales: {
+                xAxes: [
+                  {
+                    display: true,
+                    scaleLabel: {
+                      display: true,
+                      labelString: "Semana"
+                    }
+                  }
+                ],
+                yAxes: [
+                  {
+                    display: true,
+                    scaleLabel: {
+                      display: true,
+                      labelString: "Championship points"
+                    }
+                  }
+                ]
+              }
+            }
+          };
+
+          window.onload = function() {
+            var ctx = document.getElementById("canvas").getContext("2d");
+            window.myLine = new Chart(ctx, config);
+          };
+
+          var colorNames = Object.keys(window.chartColors);
+        </script>
+      </canvas>
+    </div>
+  </body>
+</html>
